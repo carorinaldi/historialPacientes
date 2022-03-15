@@ -1,6 +1,21 @@
 from .conexion import ConexionDB
 from tkinter import messagebox
 
+def editarDatoPaciente(persona, idPersona):
+        conexion = ConexionDB()
+        sql = f"""UPDATE Persona SET nombre = '{persona.nombre}', apellido = '{persona.apellido}', dni = {persona.dni}, 
+                fechaNacimiento = '{persona.fechaNacimiento}', edad = {persona.edad}, antecedentes = '{persona.antecedentes}',
+                hijos = '{persona.hijos}', ocupacion = '{persona.ocupacion}', telefono = '{persona.telefono}', correo = '{persona.correo}', activo = 1 WHERE idPersona = {idPersona}"""
+        try:
+            conexion.cursor.execute(sql)
+            conexion.cerrarConexion()
+            tittle = 'Editar Paciente'
+            mensaje = 'Paciente Editado Exitosamente'
+            messagebox.showinfo(tittle, mensaje)
+        except:
+            tittle = 'Editar Paciente'
+            mensaje = 'Error al editar paciente'
+            messagebox.showerror(tittle, mensaje)
 
 def guardarDatoPaciente(persona):
     conexion = ConexionDB()
