@@ -1,5 +1,4 @@
 # MODULO PRINCIPAL
-from inspect import FrameInfo
 import tkinter as tk
 from paciente.gui import Frame
 
