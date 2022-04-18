@@ -166,13 +166,13 @@ class Frame(tk.Frame):
         self.btnCalendario.grid(column=3, row=4, padx=10, pady=5, columnspan=1)
 
     def vistaCalendario(self):
-        self.calendario = Toplevel()
-        self.calendario.title("FECHA NACIMIENTO")
-        self.calendario.resizable(0,0)
-        self.calendario.config(bg='#407e5e')
+        self.TopCalendario = Toplevel()
+        self.TopCalendario.title("FECHA NACIMIENTO")
+        self.TopCalendario.resizable(0,0)
+        self.TopCalendario.config(bg='#407e5e')
 
         self.svCalendario = tk.StringVar()
-        self.calendar = tc.Calendar(self.calendario,selectmode='day', year=1990, month=1, day=1, locale='es_US',bg='#777777',fg='#ffffff', headersbackground='#B6DDFE',textvariable=self.svCalendario,cursor='hand2',date_pattern='dd-mm-Y')
+        self.calendar = tc.Calendar(self.TopCalendario,selectmode='day', year=1990, month=1, day=1, locale='es_US',bg='#777777',fg='#ffffff', headersbackground='#B6DDFE',textvariable=self.svCalendario,cursor='hand2',date_pattern='dd-mm-Y')
         self.calendar.pack(pady=22)
         self.calendar.grid(row=1, column=0)
 
@@ -225,7 +225,8 @@ class Frame(tk.Frame):
 
         self.deshabilitar()
         self.tablaPaciente()
-    
+        self.TopCalendario.destroy()
+
     def habilitar(self):
         #self.idPersona = None
         self.svNombre.set('')
