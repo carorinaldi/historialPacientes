@@ -6,7 +6,7 @@ from tkinter import Button, ttk, scrolledtext, Toplevel, LabelFrame
 from tkinter import messagebox
 from turtle import title
 from modelo.pacienteDao import Persona, guardarDatoPaciente, listarCondicion, listar, editarDatoPaciente, eliminarPaciente
-from modelo.historiaClinicaDao import historiaClinica, guardarHistoria, listarHistoria, eliminarHistoria
+from modelo.historiaClinicaDao import historiaClinica, guardarHistoria, listarHistoria, eliminarHistoria, editarHistoria
 import tkcalendar as tc
 from tkcalendar import *
 from tkcalendar import Calendar
@@ -20,6 +20,7 @@ class Frame(tk.Frame):
         self.idPersona = None
         self.idPersonaHistoria = None
         self.idHistoriaClinica = None
+        self.idHistoriaClinicaEditar = None
         self.camposPaciente()
         self.deshabilitar()
         self.tablaPaciente()
@@ -679,13 +680,16 @@ class Frame(tk.Frame):
             self.entryFechaHistoriaEditar.insert(0,self.fechaHistoriaEditar)
 
             #BUTTON EDITAR HISTORIA
-            self.btnEditarHistoriaClinica = tk.Button(self.frameFechaEditar,text='Editar Historia')
+            self.btnEditarHistoriaClinica = tk.Button(self.frameFechaEditar,text='Editar Historia', command=self.historiaClinicaEditar)
             self.btnEditarHistoriaClinica.config(width=20, font=('ARIAL',12,'bold'), fg='#DAD5D6', bg='#030058', cursor='hand2', activebackground='#8986DA')
             self.btnEditarHistoriaClinica.grid(row=2, column=0, padx=10, pady=5)
 
             self.btnSalirEditarHistoriaClinica = tk.Button(self.frameFechaEditar,text='Salir', command=self.topEditarHistoria.destroy)
             self.btnSalirEditarHistoriaClinica.config(width=20, font=('ARIAL',12,'bold'),fg='#DAD5D6',bg='#000000', cursor='hand2', activebackground='#676767')
             self.btnSalirEditarHistoriaClinica.grid(row=2, column=1, padx=10, pady=5)
+
+            if self.idHistoriaClinicaEditar == None:
+                self.idHistoriaClinicaEditar = self.idHistoriaClinica
 
             self.idHistoriaClinica = None
         except Exception as ex:
@@ -694,6 +698,22 @@ class Frame(tk.Frame):
             mensaje = 'Error al editar historia'
             #print(self.idPersona)
             messagebox.showerror(title,mensaje)
+    
+    def historiaClinicaEditar(self):
+        try:
+            editarHistoria(self.svFechaHistoriaEditar.get(), self.svMotivoEditar.get(), self.svAlimentacionEditar.get(), self.svActividadFisicaEditar.get(), self.svDigestionEditar.get(), self.svMedicacionEditar.get(), self.svOperacionesCicatricesEditar.get(), self.svEmbarazosEditar.get(), self.svTraumatismosEditar.get(), self.svObservacionesEditar.get(), self.idHistoriaClinicaEditar)
+            self.idHistoriaClinicaEditar = None
+            self.idHistoriaClinica = None
+            self.topEditarHistoria.destroy()
+            self.topHistoriaClinica.destroy()
+        except Exception as ex:
+            print('EXCEPT = {}'.format(ex))
+            title = 'Editar Historia'
+            mensaje = 'Error al editar historia'
+            messagebox.showerror(title,mensaje)
+            self.topEditarHistoria.destroy()
+
+
 
     def salirTop(self):
         self.topHistoriaClinica.destroy()
