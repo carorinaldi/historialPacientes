@@ -136,9 +136,9 @@ class Frame(tk.Frame):
         self.lblBuscarDni.config(font=('ARIAL',15,'bold'),bg='#407e5e',fg='#ffffff')
         self.lblBuscarDni.grid(column=3, row=0, padx=10,pady=5)
 
-        self.lblBuscarApellido = tk.Label(self, text='Buscar Apellido: ')
-        self.lblBuscarApellido.config(font=('ARIAL',15,'bold'),bg='#407e5e',fg='#ffffff')
-        self.lblBuscarApellido.grid(column=3, row=1, padx=10,pady=5)
+        self.lblBuscarNombre = tk.Label(self, text='Buscar Nombre: ')
+        self.lblBuscarNombre.config(font=('ARIAL',15,'bold'),bg='#407e5e',fg='#ffffff')
+        self.lblBuscarNombre.grid(column=3, row=1, padx=10,pady=5)
 
         #ENTRYS BUSCADOR
         self.svBuscarDni = tk.StringVar()
@@ -146,10 +146,10 @@ class Frame(tk.Frame):
         self.entryBuscarDni.config(width=20,font=('ARIAL',15))
         self.entryBuscarDni.grid(column=4,row=0, padx=10, pady=5, columnspan=2)
 
-        self.svBuscarApellido = tk.StringVar()
-        self.entryBuscarApellido = tk.Entry(self,textvariable=self.svBuscarApellido)
-        self.entryBuscarApellido.config(width=20,font=('ARIAL',15))
-        self.entryBuscarApellido.grid(column=4,row=1, padx=10, pady=5, columnspan=2)
+        self.svBuscarNombre = tk.StringVar()
+        self.entryBuscarNombre = tk.Entry(self,textvariable=self.svBuscarNombre)
+        self.entryBuscarNombre.config(width=20,font=('ARIAL',15))
+        self.entryBuscarNombre.grid(column=4,row=1, padx=10, pady=5, columnspan=2)
 
         #BUTTON BUSCADOR
         self.btnBuscarCondicion = tk.Button(self, text='Buscar', command=self.buscarCondicion)
@@ -194,17 +194,17 @@ class Frame(tk.Frame):
         self.svEdad.set(self.resul)
 
     def limpiarBuscador(self):
-        self.svBuscarApellido.set('')
+        self.svBuscarNombre.set('')
         self.svBuscarDni.set('')
         self.tablaPaciente()
 
     def buscarCondicion(self):
-        if len(self.svBuscarDni.get()) > 0 or len(self.svBuscarApellido.get()) > 0:
+        if len(self.svBuscarDni.get()) > 0 or len(self.svBuscarNombre.get()) > 0:
             where = "WHERE 1=1"
             if (len(self.svBuscarDni.get())) > 0:
                 where = "WHERE dni = " + self.svBuscarDni.get() + "" #WHERE dni = '87878787'
-            if (len(self.svBuscarApellido.get())) > 0:
-                where = "WHERE Apellido LIKE  '" + self.svBuscarApellido.get() + "%' AND activo = 1"
+            if (len(self.svBuscarNombre.get())) > 0:
+                where = "WHERE Nombre LIKE  '" + self.svBuscarNombre.get() + "%' AND activo = 1"
             
             self.tablaPaciente(where)
         else:
