@@ -6,6 +6,7 @@ def main():
     root = tk.Tk()
     root.title('HISTORIA CLINICA')
     root.resizable(0,0)
+    root.iconbitmap('img/logo.ico')
 
     frame = Frame(root)
     frame.mainloop()
