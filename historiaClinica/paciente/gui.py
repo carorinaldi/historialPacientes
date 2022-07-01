@@ -606,94 +606,94 @@ class Frame(tk.Frame):
 
             #LABEL EDITAR HISTORIA
             self.lblMotivoEditar = tk.Label(self.frameEditarHistoria, text='Motivo de la Historia', width=110, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblMotivoEditar.grid(row=0,column=0, padx=5, pady=3)
+            self.lblMotivoEditar.grid(row=0,column=0, padx=5, pady=2)
 
             self.lblAlimentacionEditar = tk.Label(self.frameEditarHistoria, text='Tipo de Alimentacion', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblAlimentacionEditar.grid(row=2,column=0, padx=5, pady=3)
+            self.lblAlimentacionEditar.grid(row=2,column=0, padx=5, pady=2)
 
             self.lblActividadFisicaEditar = tk.Label(self.frameEditarHistoria, text='Actividad Fisica', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblActividadFisicaEditar.grid(row=4,column=0, padx=5, pady=3)
+            self.lblActividadFisicaEditar.grid(row=4,column=0, padx=5, pady=2)
 
             self.lblDigestionEditar = tk.Label(self.frameEditarHistoria, text='Digestion', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblDigestionEditar.grid(row=6,column=0, padx=5, pady=3)
+            self.lblDigestionEditar.grid(row=6,column=0, padx=5, pady=2)
 
             self.lblMedicacionEditar = tk.Label(self.frameEditarHistoria, text='Medicacion', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblMedicacionEditar.grid(row=8,column=0, padx=5, pady=3)
+            self.lblMedicacionEditar.grid(row=8,column=0, padx=5, pady=2)
 
             self.lblOperacionesCicatricesEditar = tk.Label(self.frameEditarHistoria, text='Operaciones/Cicatrices', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblOperacionesCicatricesEditar.grid(row=10,column=0, padx=5, pady=3)
+            self.lblOperacionesCicatricesEditar.grid(row=10,column=0, padx=5, pady=2)
 
             self.lblEmbarazosEditar = tk.Label(self.frameEditarHistoria, text='Embarazos', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblEmbarazosEditar.grid(row=12,column=0, padx=5, pady=3)
+            self.lblEmbarazosEditar.grid(row=12,column=0, padx=5, pady=2)
 
             self.lblTraumatismosEditar = tk.Label(self.frameEditarHistoria, text='Traumatismos', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblTraumatismosEditar.grid(row=14,column=0, padx=5, pady=3)
+            self.lblTraumatismosEditar.grid(row=14,column=0, padx=5, pady=2)
 
             self.lblObservacionesEditar = tk.Label(self.frameEditarHistoria, text='Observaciones', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblObservacionesEditar.grid(row=16,column=0, padx=5, pady=3)
+            self.lblObservacionesEditar.grid(row=16,column=0, padx=5, pady=2)
 
             self.lblDiagnosticoEditar = tk.Label(self.frameEditarHistoria, text='Diagnostico', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblDiagnosticoEditar.grid(row=18,column=0, padx=5, pady=3)
+            self.lblDiagnosticoEditar.grid(row=18,column=0, padx=5, pady=2)
 
             self.lblTratamientoEditar = tk.Label(self.frameEditarHistoria, text='Tratamiento', width=30, font=('ARIAL',13,'bold'), bg='#d5ecd2')
-            self.lblTratamientoEditar.grid(row=20,column=0, padx=5, pady=3)
+            self.lblTratamientoEditar.grid(row=20,column=0, padx=5, pady=2)
 
             #ENTRYS EDITAR HISTORIA
 
             self.svMotivoEditar = tk.StringVar()
             self.entryMotivoEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svMotivoEditar)
             self.entryMotivoEditar.config(width=110, font=('ARIAL',13))
-            self.entryMotivoEditar.grid(row=1, column=0, pady=3, padx=5,columnspan=2)
+            self.entryMotivoEditar.grid(row=1, column=0, pady=2, padx=5,columnspan=2)
             
             self.svAlimentacionEditar = tk.StringVar()
             self.entryAlimentacionEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svAlimentacionEditar)
             self.entryAlimentacionEditar.config(width=110, font=('ARIAL',13))
-            self.entryAlimentacionEditar.grid(row=3, column=0, pady=3, padx=5,columnspan=2)
+            self.entryAlimentacionEditar.grid(row=3, column=0, pady=2, padx=5,columnspan=2)
 
             self.svActividadFisicaEditar = tk.StringVar()
             self.entryActividadFisicaEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svActividadFisicaEditar)
             self.entryActividadFisicaEditar.config(width=110, font=('ARIAL',13))
-            self.entryActividadFisicaEditar.grid(row=5, column=0, pady=3, padx=5,columnspan=2)
+            self.entryActividadFisicaEditar.grid(row=5, column=0, pady=2, padx=5,columnspan=2)
 
             self.svDigestionEditar = tk.StringVar()
             self.entryDigestionEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svDigestionEditar)
             self.entryDigestionEditar.config(width=110, font=('ARIAL',13))
-            self.entryDigestionEditar.grid(row=7, column=0, pady=3, padx=5,columnspan=2)
+            self.entryDigestionEditar.grid(row=7, column=0, pady=2, padx=5,columnspan=2)
 
             self.svMedicacionEditar = tk.StringVar()
             self.entryMedicacionEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svMedicacionEditar)
             self.entryMedicacionEditar.config(width=110, font=('ARIAL',13))
-            self.entryMedicacionEditar.grid(row=9, column=0, pady=3, padx=5,columnspan=2)
+            self.entryMedicacionEditar.grid(row=9, column=0, pady=2, padx=5,columnspan=2)
 
             self.svOperacionesCicatricesEditar = tk.StringVar()
             self.entryOperacionesCicatricesEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svOperacionesCicatricesEditar)
             self.entryOperacionesCicatricesEditar.config(width=110, font=('ARIAL',13))
-            self.entryOperacionesCicatricesEditar.grid(row=11, column=0, pady=3, padx=5,columnspan=2)
+            self.entryOperacionesCicatricesEditar.grid(row=11, column=0, pady=2, padx=5,columnspan=2)
 
             self.svEmbarazosEditar = tk.StringVar()
             self.entryEmbarazosEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svEmbarazosEditar)
             self.entryEmbarazosEditar.config(width=110, font=('ARIAL',13))
-            self.entryEmbarazosEditar.grid(row=13, column=0, pady=3, padx=5,columnspan=2)
+            self.entryEmbarazosEditar.grid(row=13, column=0, pady=2, padx=5,columnspan=2)
 
             self.svTraumatismosEditar = tk.StringVar()
             self.entryTraumatismosEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svTraumatismosEditar)
             self.entryTraumatismosEditar.config(width=110, font=('ARIAL',13))
-            self.entryTraumatismosEditar.grid(row=15, column=0, pady=3, padx=5,columnspan=2)
+            self.entryTraumatismosEditar.grid(row=15, column=0, pady=2, padx=5,columnspan=2)
 
             self.svObservacionesEditar = tk.StringVar()
             self.entryObservacionesEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svObservacionesEditar)
             self.entryObservacionesEditar.config(width=110, font=('ARIAL',13))
-            self.entryObservacionesEditar.grid(row=17, column=0, pady=3, padx=5,columnspan=2)
+            self.entryObservacionesEditar.grid(row=17, column=0, pady=2, padx=5,columnspan=2)
 
             self.svDiagnosticoEditar = tk.StringVar()
             self.entryDiagnosticoEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svDiagnosticoEditar)
             self.entryDiagnosticoEditar.config(width=110, font=('ARIAL',13))
-            self.entryDiagnosticoEditar.grid(row=19, column=0, pady=3, padx=5,columnspan=2)
+            self.entryDiagnosticoEditar.grid(row=19, column=0, pady=2, padx=5,columnspan=2)
 
             self.svTratamientoEditar = tk.StringVar()
             self.entryTratamientoEditar = tk.Entry(self.frameEditarHistoria, textvariable=self.svTratamientoEditar)
             self.entryTratamientoEditar.config(width=110, font=('ARIAL',13))
-            self.entryTratamientoEditar.grid(row=21, column=0, pady=3, padx=5,columnspan=2)
+            self.entryTratamientoEditar.grid(row=21, column=0, pady=2, padx=5,columnspan=2)
 
             #FRAME FECHA EDITAR
             self.frameFechaEditar = tk.LabelFrame(self.topEditarHistoria)
